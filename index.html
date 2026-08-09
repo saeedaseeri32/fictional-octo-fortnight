@@ -1,225 +1,595 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>بيت سعيد بن عمري | المجلس</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<style>
-*{box-sizing:border-box;margin:0;padding:0}
+  <title>مجلس بيت سعيد بن عمري</title>
 
-body{
-font-family:Tahoma,Arial,sans-serif;
-background:#11100e;
-color:#f5efe3;
-line-height:1.8;
-}
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
 
-header{
-min-height:100vh;
-display:flex;
-align-items:center;
-justify-content:center;
-text-align:center;
-padding:30px 20px;
-background:
-radial-gradient(circle at top,#4b3820 0%,transparent 45%),
-linear-gradient(135deg,#17130e,#080807);
-}
+    :root {
+      --gold: #b8904a;
+      --gold-light: #d8bd82;
+      --cream: #f8f5ef;
+      --white: #ffffff;
+      --text: #29251f;
+      --muted: #766f63;
+      --border: #e8dfd1;
+    }
 
-.hero{max-width:850px}
+    body {
+      font-family: Tahoma, Arial, sans-serif;
+      background: var(--cream);
+      color: var(--text);
+      line-height: 1.8;
+    }
 
-.icon{font-size:70px;margin-bottom:15px}
+    /* الشريط العلوي */
+    nav {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      z-index: 1000;
+      background: rgba(255,255,255,.92);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+      padding: 12px 6%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
 
-h1{
-font-size:clamp(42px,10vw,78px);
-color:#d8b36a;
-margin-bottom:10px;
-text-shadow:0 4px 20px rgba(0,0,0,.6);
-}
+    .nav-logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-weight: bold;
+      color: var(--gold);
+      font-size: 17px;
+    }
 
-.subtitle{
-font-size:21px;
-color:#ddd0b8;
-margin-bottom:35px;
-}
+    .mini-logo {
+      width: 42px;
+      height: 42px;
+      border: 2px solid var(--gold);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 20px;
+      background: #fffaf1;
+    }
 
-.divider{
-width:100px;
-height:3px;
-background:#d8b36a;
-margin:25px auto;
-}
+    .nav-links {
+      display: flex;
+      gap: 25px;
+    }
 
-.btn{
-display:inline-block;
-text-decoration:none;
-color:#17130e;
-background:#d8b36a;
-padding:12px 28px;
-border-radius:30px;
-font-weight:bold;
-margin:7px;
-transition:.3s;
-}
+    .nav-links a {
+      text-decoration: none;
+      color: var(--text);
+      font-size: 14px;
+      transition: .3s;
+    }
 
-.btn:hover{
-transform:translateY(-3px);
-background:#efd18e;
-}
+    .nav-links a:hover {
+      color: var(--gold);
+    }
 
-section{
-padding:70px 20px;
-max-width:1000px;
-margin:auto;
-}
+    /* الواجهة الرئيسية */
+    header {
+      min-height: 100vh;
+      padding: 130px 20px 70px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
 
-.section-title{
-text-align:center;
-color:#d8b36a;
-font-size:32px;
-margin-bottom:35px;
-}
+      background:
+        radial-gradient(circle at 50% 20%, rgba(216,189,130,.25), transparent 35%),
+        linear-gradient(135deg, #fffdf9, #f4eee3);
+    }
 
-.card{
-background:#1b1814;
-border:1px solid #4c3b24;
-border-radius:20px;
-padding:30px;
-margin-bottom:20px;
-box-shadow:0 10px 30px rgba(0,0,0,.25);
-}
+    .hero {
+      max-width: 850px;
+    }
 
-.card p{
-color:#ded6c8;
-font-size:18px;
-text-align:center;
-}
+    .logo {
+      width: 145px;
+      height: 145px;
+      margin: 0 auto 25px;
 
-.features{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-gap:18px;
-}
+      border: 3px solid var(--gold);
+      border-radius: 50%;
 
-.feature{
-text-align:center;
-padding:25px;
-background:#191612;
-border:1px solid #3d301f;
-border-radius:18px;
-}
+      display: flex;
+      align-items: center;
+      justify-content: center;
 
-.feature .emoji{
-font-size:42px;
-margin-bottom:10px;
-}
+      background:
+        radial-gradient(circle, #fffdf8, #f3ead9);
 
-.feature h3{
-color:#d8b36a;
-margin-bottom:8px;
-}
+      box-shadow:
+        0 15px 40px rgba(130,100,50,.15),
+        inset 0 0 0 7px #fffaf1;
+    }
 
-footer{
-text-align:center;
-padding:30px 15px;
-border-top:1px solid #34291c;
-color:#9e9587;
-background:#0b0a09;
-}
+    .logo-inner {
+      width: 112px;
+      height: 112px;
+      border: 1px solid var(--gold-light);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      color: var(--gold);
+    }
 
-@media(max-width:600px){
-h1{font-size:43px}
-.subtitle{font-size:18px}
-section{padding:50px 15px}
-}
-</style>
+    .logo-symbol {
+      font-size: 42px;
+      line-height: 1;
+      margin-bottom: 5px;
+    }
+
+    .logo-text {
+      font-size: 13px;
+      font-weight: bold;
+    }
+
+    h1 {
+      font-size: clamp(34px, 8vw, 68px);
+      color: var(--text);
+      margin-bottom: 10px;
+      font-weight: 700;
+    }
+
+    h1 span {
+      color: var(--gold);
+    }
+
+    .subtitle {
+      font-size: 20px;
+      color: var(--muted);
+      max-width: 650px;
+      margin: auto;
+    }
+
+    .divider {
+      width: 80px;
+      height: 3px;
+      background: var(--gold);
+      margin: 25px auto;
+      border-radius: 10px;
+    }
+
+    .hero-buttons {
+      margin-top: 30px;
+    }
+
+    .btn {
+      display: inline-block;
+      text-decoration: none;
+      padding: 13px 27px;
+      border-radius: 30px;
+      margin: 6px;
+      font-weight: bold;
+      transition: .3s;
+    }
+
+    .btn-whatsapp {
+      background: #25D366;
+      color: white;
+      box-shadow: 0 8px 20px rgba(37,211,102,.2);
+    }
+
+    .btn-whatsapp:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 12px 25px rgba(37,211,102,.3);
+    }
+
+    .btn-outline {
+      border: 1px solid var(--gold);
+      color: var(--gold);
+      background: white;
+    }
+
+    .btn-outline:hover {
+      background: var(--gold);
+      color: white;
+    }
+
+    /* الأقسام */
+    section {
+      padding: 80px 20px;
+      max-width: 1100px;
+      margin: auto;
+    }
+
+    .section-title {
+      text-align: center;
+      font-size: 32px;
+      margin-bottom: 12px;
+      color: var(--text);
+    }
+
+    .section-title span {
+      color: var(--gold);
+    }
+
+    .section-subtitle {
+      text-align: center;
+      color: var(--muted);
+      margin-bottom: 40px;
+    }
+
+    /* البطاقات */
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px;
+    }
+
+    .card {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 35px 25px;
+      text-align: center;
+      box-shadow: 0 10px 30px rgba(60,45,25,.06);
+      transition: .3s;
+    }
+
+    .card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 18px 40px rgba(60,45,25,.10);
+    }
+
+    .card-icon {
+      font-size: 42px;
+      margin-bottom: 15px;
+    }
+
+    .card h3 {
+      margin-bottom: 10px;
+      color: var(--gold);
+      font-size: 21px;
+    }
+
+    .card p {
+      color: var(--muted);
+      font-size: 15px;
+    }
+
+    /* قسم الترحيب */
+    .welcome {
+      background: white;
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .welcome-box {
+      max-width: 850px;
+      margin: auto;
+      text-align: center;
+    }
+
+    .welcome-box p {
+      color: var(--muted);
+      font-size: 18px;
+    }
+
+    /* واتساب */
+    .contact {
+      text-align: center;
+      background: linear-gradient(135deg, #fffdf8, #f2eadb);
+      border-radius: 30px;
+      padding: 55px 25px;
+      border: 1px solid var(--border);
+    }
+
+    .contact h2 {
+      font-size: 30px;
+      margin-bottom: 10px;
+    }
+
+    .phone {
+      direction: ltr;
+      display: block;
+      color: var(--gold);
+      font-size: 22px;
+      font-weight: bold;
+      margin: 15px 0;
+    }
+
+    /* الفوتر */
+    footer {
+      background: #29251f;
+      color: #eee6d8;
+      text-align: center;
+      padding: 35px 20px;
+    }
+
+    footer .footer-logo {
+      color: var(--gold-light);
+      font-size: 20px;
+      font-weight: bold;
+      margin-bottom: 8px;
+    }
+
+    footer p {
+      color: #bdb4a5;
+      font-size: 13px;
+    }
+
+    /* الجوال */
+    @media (max-width: 700px) {
+
+      nav {
+        padding: 10px 15px;
+      }
+
+      .nav-links {
+        display: none;
+      }
+
+      .nav-logo {
+        font-size: 14px;
+      }
+
+      header {
+        padding-top: 110px;
+      }
+
+      .logo {
+        width: 125px;
+        height: 125px;
+      }
+
+      .logo-inner {
+        width: 96px;
+        height: 96px;
+      }
+
+      .logo-symbol {
+        font-size: 34px;
+      }
+
+      h1 {
+        font-size: 40px;
+      }
+
+      .subtitle {
+        font-size: 17px;
+      }
+
+      .cards {
+        grid-template-columns: 1fr;
+      }
+
+      section {
+        padding: 60px 18px;
+      }
+
+      .section-title {
+        font-size: 28px;
+      }
+
+      .btn {
+        display: block;
+        max-width: 300px;
+        margin: 10px auto;
+      }
+    }
+  </style>
 </head>
 
 <body>
 
-<header>
-<div class="hero">
+  <!-- الشريط العلوي -->
+  <nav>
 
-<div class="icon">🏠</div>
+    <div class="nav-logo">
+      <div class="mini-logo">م</div>
+      مجلس سعيد
+    </div>
 
-<h1>بيت سعيد بن عمري</h1>
+    <div class="nav-links">
+      <a href="#home">الرئيسية</a>
+      <a href="#about">عن المجلس</a>
+      <a href="#features">المميزات</a>
+      <a href="#contact">تواصل معنا</a>
+    </div>
 
-<div class="divider"></div>
+  </nav>
 
-<p class="subtitle">
-مجلس يجمعنا على الطيب والكرم والذكريات الجميلة
-</p>
 
-<a href="#about" class="btn">عن المجلس</a>
-<a href="#contact" class="btn">التواصل</a>
+  <!-- الصفحة الرئيسية -->
+  <header id="home">
 
-</div>
-</header>
+    <div class="hero">
 
-<section id="about">
+      <!-- الشعار -->
+      <div class="logo">
 
-<h2 class="section-title">عن بيت سعيد بن عمري</h2>
+        <div class="logo-inner">
 
-<div class="card">
-<p>
-مرحباً بكم في بيت سعيد بن عمري،
-مجلس يجمع الأهل والأصدقاء في أجواء من المحبة
-والكرم والراحة.
-</p>
-</div>
+          <div class="logo-symbol">م</div>
 
-</section>
+          <div class="logo-text">
+            بيت سعيد
+          </div>
 
-<section>
+        </div>
 
-<h2 class="section-title">مجلسنا</h2>
+      </div>
 
-<div class="features">
+      <h1>
+        مجلس <span>بيت سعيد بن عمري</span>
+      </h1>
 
-<div class="feature">
-<div class="emoji">☕</div>
-<h3>القهوة والكرم</h3>
-<p>القهوة العربية حاضرة دائماً</p>
-</div>
+      <div class="divider"></div>
 
-<div class="feature">
-<div class="emoji">🛋️</div>
-<h3>مجلس فاخر</h3>
-<p>جلسات مريحة لأجمل الأوقات</p>
-</div>
+      <p class="subtitle">
+        أهلاً وسهلاً بكم في مجلس بيت سعيد بن عمري
+        <br>
+        مكان يجمع الأصالة والكرم وحسن الضيافة
+      </p>
 
-<div class="feature">
-<div class="emoji">🤝</div>
-<h3>اللمة الطيبة</h3>
-<p>مكان يجمع الأحبة والأصدقاء</p>
-</div>
+      <div class="hero-buttons">
 
-</div>
+        <a
+          href="https://wa.me/966500293944"
+          class="btn btn-whatsapp"
+          target="_blank">
+          💬 تواصل معنا عبر واتساب
+        </a>
 
-</section>
+        <a href="#about" class="btn btn-outline">
+          اكتشف المجلس
+        </a>
 
-<section id="contact">
+      </div>
 
-<h2 class="section-title">تواصل معنا</h2>
+    </div>
 
-<div class="card">
+  </header>
 
-<p style="margin-bottom:20px;">
-حياكم الله في بيت سعيد بن عمري
-</p>
 
-<a class="btn" href="tel:0500000000">
-📞 اتصل بنا
-</a>
+  <!-- عن المجلس -->
+  <div class="welcome" id="about">
 
-</div>
+    <section>
 
-</section>
+      <div class="welcome-box">
 
-<footer>
-© 2026 بيت سعيد بن عمري — جميع الحقوق محفوظة
-</footer>
+        <h2 class="section-title">
+          أهلاً بكم في <span>مجلسنا</span>
+        </h2>
+
+        <div class="divider"></div>
+
+        <p>
+          مجلس بيت سعيد بن عمري هو مساحة تجمع بين
+          الأصالة والراحة والضيافة العربية الأصيلة.
+          نرحب بضيوفنا بكل محبة وتقدير، ونسعد دائماً
+          بلقاء الأهل والأصدقاء.
+        </p>
+
+      </div>
+
+    </section>
+
+  </div>
+
+
+  <!-- المميزات -->
+  <section id="features">
+
+    <h2 class="section-title">
+      <span>مميزات</span> المجلس
+    </h2>
+
+    <p class="section-subtitle">
+      أجواء راقية وراحة تليق بضيوفنا
+    </p>
+
+
+    <div class="cards">
+
+      <div class="card">
+
+        <div class="card-icon">☕</div>
+
+        <h3>الضيافة</h3>
+
+        <p>
+          كرم الضيافة العربية الأصيلة
+          وحفاوة استقبال الضيوف.
+        </p>
+
+      </div>
+
+
+      <div class="card">
+
+        <div class="card-icon">🏡</div>
+
+        <h3>الأجواء</h3>
+
+        <p>
+          أجواء هادئة ومريحة مناسبة
+          للجلسات واللقاءات العائلية.
+        </p>
+
+      </div>
+
+
+      <div class="card">
+
+        <div class="card-icon">✨</div>
+
+        <h3>الأصالة</h3>
+
+        <p>
+          طابع يجمع بين التراث والأناقة
+          والتصميم العصري.
+        </p>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- التواصل -->
+  <section id="contact">
+
+    <div class="contact">
+
+      <h2>
+        تواصل معنا
+      </h2>
+
+      <p>
+        للاستفسارات والتواصل، يمكنكم مراسلتنا مباشرة عبر واتساب.
+      </p>
+
+      <span class="phone">
+        0500293944
+      </span>
+
+      <a
+        href="https://wa.me/966500293944"
+        class="btn btn-whatsapp"
+        target="_blank">
+        💬 فتح واتساب
+      </a>
+
+    </div>
+
+  </section>
+
+
+  <!-- الفوتر -->
+  <footer>
+
+    <div class="footer-logo">
+      مجلس بيت سعيد بن عمري
+    </div>
+
+    <p>
+      © 2026 جميع الحقوق محفوظة
+    </p>
+
+  </footer>
 
 </body>
 </html>
