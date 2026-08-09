@@ -1,89 +1,225 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>بيت سعيد بن عمري | المجلس</title>
 
-  <title>بيت سعيد بن عمري | المجلس</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
 
-  <style>
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
+body{
+font-family:Tahoma,Arial,sans-serif;
+background:#11100e;
+color:#f5efe3;
+line-height:1.8;
+}
 
-    body {
-      font-family: Tahoma, Arial, sans-serif;
-      background: #11100e;
-      color: #f5efe3;
-      line-height: 1.8;
-    }
+header{
+min-height:100vh;
+display:flex;
+align-items:center;
+justify-content:center;
+text-align:center;
+padding:30px 20px;
+background:
+radial-gradient(circle at top,#4b3820 0%,transparent 45%),
+linear-gradient(135deg,#17130e,#080807);
+}
 
-    header {
-      min-height: 100vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      padding: 30px 20px;
-      background:
-        radial-gradient(circle at top, #4b3820 0%, transparent 45%),
-        linear-gradient(135deg, #17130e, #080807);
-    }
+.hero{max-width:850px}
 
-    .hero {
-      max-width: 850px;
-    }
+.icon{font-size:70px;margin-bottom:15px}
 
-    .icon {
-      font-size: 70px;
-      margin-bottom: 15px;
-    }
+h1{
+font-size:clamp(42px,10vw,78px);
+color:#d8b36a;
+margin-bottom:10px;
+text-shadow:0 4px 20px rgba(0,0,0,.6);
+}
 
-    h1 {
-      font-size: clamp(42px, 10vw, 78px);
-      color: #d8b36a;
-      margin-bottom: 10px;
-      text-shadow: 0 4px 20px rgba(0,0,0,.6);
-    }
+.subtitle{
+font-size:21px;
+color:#ddd0b8;
+margin-bottom:35px;
+}
 
-    .subtitle {
-      font-size: 21px;
-      color: #ddd0b8;
-      margin-bottom: 35px;
-    }
+.divider{
+width:100px;
+height:3px;
+background:#d8b36a;
+margin:25px auto;
+}
 
-    .divider {
-      width: 100px;
-      height: 3px;
-      background: #d8b36a;
-      margin: 25px auto;
-    }
+.btn{
+display:inline-block;
+text-decoration:none;
+color:#17130e;
+background:#d8b36a;
+padding:12px 28px;
+border-radius:30px;
+font-weight:bold;
+margin:7px;
+transition:.3s;
+}
 
-    .btn {
-      display: inline-block;
-      text-decoration: none;
-      color: #17130e;
-      background: #d8b36a;
-      padding: 12px 28px;
-      border-radius: 30px;
-      font-weight: bold;
-      margin: 7px;
-      transition: .3s;
-    }
+.btn:hover{
+transform:translateY(-3px);
+background:#efd18e;
+}
 
-    .btn:hover {
-      transform: translateY(-3px);
-      background: #efd18e;
-    }
+section{
+padding:70px 20px;
+max-width:1000px;
+margin:auto;
+}
 
-    section {
-      padding: 70px 20px;
-      max-width: 1000px;
-      margin: auto;
-    }
+.section-title{
+text-align:center;
+color:#d8b36a;
+font-size:32px;
+margin-bottom:35px;
+}
 
-    .section-title {
-      text-align: center;
-      color: #d
+.card{
+background:#1b1814;
+border:1px solid #4c3b24;
+border-radius:20px;
+padding:30px;
+margin-bottom:20px;
+box-shadow:0 10px 30px rgba(0,0,0,.25);
+}
+
+.card p{
+color:#ded6c8;
+font-size:18px;
+text-align:center;
+}
+
+.features{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+gap:18px;
+}
+
+.feature{
+text-align:center;
+padding:25px;
+background:#191612;
+border:1px solid #3d301f;
+border-radius:18px;
+}
+
+.feature .emoji{
+font-size:42px;
+margin-bottom:10px;
+}
+
+.feature h3{
+color:#d8b36a;
+margin-bottom:8px;
+}
+
+footer{
+text-align:center;
+padding:30px 15px;
+border-top:1px solid #34291c;
+color:#9e9587;
+background:#0b0a09;
+}
+
+@media(max-width:600px){
+h1{font-size:43px}
+.subtitle{font-size:18px}
+section{padding:50px 15px}
+}
+</style>
+</head>
+
+<body>
+
+<header>
+<div class="hero">
+
+<div class="icon">🏠</div>
+
+<h1>بيت سعيد بن عمري</h1>
+
+<div class="divider"></div>
+
+<p class="subtitle">
+مجلس يجمعنا على الطيب والكرم والذكريات الجميلة
+</p>
+
+<a href="#about" class="btn">عن المجلس</a>
+<a href="#contact" class="btn">التواصل</a>
+
+</div>
+</header>
+
+<section id="about">
+
+<h2 class="section-title">عن بيت سعيد بن عمري</h2>
+
+<div class="card">
+<p>
+مرحباً بكم في بيت سعيد بن عمري،
+مجلس يجمع الأهل والأصدقاء في أجواء من المحبة
+والكرم والراحة.
+</p>
+</div>
+
+</section>
+
+<section>
+
+<h2 class="section-title">مجلسنا</h2>
+
+<div class="features">
+
+<div class="feature">
+<div class="emoji">☕</div>
+<h3>القهوة والكرم</h3>
+<p>القهوة العربية حاضرة دائماً</p>
+</div>
+
+<div class="feature">
+<div class="emoji">🛋️</div>
+<h3>مجلس فاخر</h3>
+<p>جلسات مريحة لأجمل الأوقات</p>
+</div>
+
+<div class="feature">
+<div class="emoji">🤝</div>
+<h3>اللمة الطيبة</h3>
+<p>مكان يجمع الأحبة والأصدقاء</p>
+</div>
+
+</div>
+
+</section>
+
+<section id="contact">
+
+<h2 class="section-title">تواصل معنا</h2>
+
+<div class="card">
+
+<p style="margin-bottom:20px;">
+حياكم الله في بيت سعيد بن عمري
+</p>
+
+<a class="btn" href="tel:0500000000">
+📞 اتصل بنا
+</a>
+
+</div>
+
+</section>
+
+<footer>
+© 2026 بيت سعيد بن عمري — جميع الحقوق محفوظة
+</footer>
+
+</body>
+</html>
